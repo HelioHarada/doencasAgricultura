@@ -1,6 +1,7 @@
 const customExpress = require('./config/customExpress')
 const conexao = require('./infra/conexao')
 const Tabelas = require('./infra/tabelas')
+const serveStatic = require('serve-static')
 conexao.connect((erro) =>{
     if(erro){
         console.log(erro)
