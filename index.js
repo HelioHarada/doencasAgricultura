@@ -10,7 +10,7 @@ conexao.connect((erro) =>{
         Tabelas.init(conexao)
 
         const app = customExpress()
-
+        app.use(serveStatic(__dirname));
   
 
 
