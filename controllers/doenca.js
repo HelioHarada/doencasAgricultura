@@ -22,20 +22,24 @@ module.exports = app =>{
         Doenca.list(res)
      })
 
+     app.get('/doenca/:id', (req, res) => {
+        const id = parseInt(req.params.id)
+   
+        Doenca.listById(id, res)
+     })
 
-    //  Post 
-        // POST
-        app.post('/doenca', (req, res) => {
+    // POST
+    app.post('/doenca', (req, res) => {
 
-            upload(req, res, function (err) {
-    
-                if (err) {
-                    console.log("erro")
-                }
-                const doenca = req.body
-                console.log(doenca)
-                Doenca.create(doenca, res)
-            });
-    
-        })
+        upload(req, res, function (err) {
+
+            if (err) {
+                console.log("erro")
+            }
+            const doenca = req.body
+            console.log(doenca)
+            Doenca.create(doenca, res)
+        });
+
+    })
 }

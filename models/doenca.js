@@ -26,6 +26,20 @@ class Doenca{
             }
         })
     }
+
+    listById(id, res){
+        const sql = `SELECT * FROM Doencas WHERE id=${id}`
+        
+
+        conexao.query(sql, (error, resultado) => {
+            if(error){
+                res.status(400).json(error)
+            }else{
+                console.log(resultado)
+                res.status(200).json(resultado)
+            }
+        })
+    }
 }
 
 module.exports = new Doenca
