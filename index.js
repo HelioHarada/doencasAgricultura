@@ -2,6 +2,7 @@ const customExpress = require('./config/customExpress')
 const conexao = require('./infra/conexao')
 const Tabelas = require('./infra/tabelas')
 const serveStatic = require('serve-static')
+const port = process.env.PORT || 8081;
 conexao.connect((erro) =>{
     if(erro){
         console.log(erro)
@@ -15,6 +16,6 @@ conexao.connect((erro) =>{
   
 
 
-        app.listen(8081, ()=> console.log("Servidor rodando na porta 8081"));
+        app.listen(port, ()=> console.log("Servidor rodando na porta :" + port));
     }
 })
